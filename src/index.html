@@ -9,16 +9,44 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <link rel="stylesheet" href="css/index.css">
-  <script type="text/javascript" src="../lib/ventus.js"></script>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.11/css/all.css" crossorigin="anonymous">
 </head>
 
 <body unselectable="on">
-  <div class="buttonbar">
-    <button class="button expose-button">Exposé</button>
+
+  <!-- Desktop Icons -->
+  <div class="desktop-icons">
+    <div class="icon">
+      <a href="#" class="expose-button"><img src="img/expose.png" alt=""><span>Expose</span></a>
+    </div>
+    <div class="icon">
+      <a href="#" class="blog-button"><img src="https://image.noelshack.com/fichiers/2018/18/6/1525513595-screenshot-5.png" alt=""><span>Blog</span></a>
+    </div>
   </div>
+
+  <!-- Taskbar -->
+  <div class="taskbar">
+    <div class="icons">
+      <div class="icons-left">
+        <a href="#" id="start-menu"><i class="fab fa-windows"></i></a>
+        <a href="#" class="expose-button2" id="tabs-windows"></a>
+      </div>
+
+      <div class="icons-right">
+        <div class="datetime">
+          <span class="hour" id="time">##:##</span>
+          <span class="date" id="date">##/##/####</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Blog -->
   <div id="content">
     <img src="img/BlogPosts.png"/>
   </div>
+
+  <script type="text/javascript" src="../lib/ventus.js"></script>
   <script type="text/javascript" src="js/index.js"></script>
 </body>
 

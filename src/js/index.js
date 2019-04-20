@@ -18,12 +18,34 @@ const $ = (selector) => (type, listener) => {
   return type ? element.addEventListener(type, listener) : element;
 };
 
-$()('DOMContentLoaded', () => {
-  createWindow('Blog', 100, 80, 630, 600, '#content');
+$('.blog-button')('click', () => {
+  createWindow('Blog', 150, 80, 630, 600, '#content');
 });
 
 $('.expose-button')('click', () => {
   window.x.mode = (window.x.mode === 'expose') ? 'default' : 'expose'
 });
 
+$('.expose-button2')('click', () => {
+  window.x.mode = (window.x.mode === 'expose') ? 'default' : 'expose'
+});
+
 window.x = x;
+
+document.getElementById('date').innerHTML = getFormattedDate(new Date());
+
+setTime = () => {
+  document.getElementById('time').innerHTML = new Date().toTimeString().substr(0, 8);
+}
+
+setTime();
+
+window.setInterval(setTime, 1000);
+
+function getFormattedDate(date) {
+  let year = date.getFullYear();
+  let month = (1 + date.getMonth()).toString().padStart(2, '0');
+  let day = date.getDate().toString().padStart(2, '0');
+
+  return month + '/' + day + '/' + year;
+}
