@@ -1,20 +1,29 @@
-document.addEventListener('DOMContentLoaded', () => {
-  window.x = new Ventus.WindowManager();
+const x = new Ventus.WindowManager();
 
-  document.querySelector('.create-button').addEventListener('click', () => {
-    window.x.createWindow({
-      title: 'Window',
-      x: 120,
-      y: 60,
-      width: 400,
-      height: 250,
-      events: {
-        closed: () => this.destroy()
+const createWindow = (title, x, y, width, height, query) => {
+  window.x.createWindow.fromQuery(query, {
+    title, x, y, width, height,
+    animations: false,
+    events: {
+      closed: function () {
+        this.destroy();
       }
-    }).open();
-  });
+    }
+  }).open();
+};
 
-  document.querySelector('.expose-button').addEventListener('click', () => 
-    !!(window.x.mode = (window.x.mode === 'expose') ? 'default' : 'expose')
-  );
+const $ = (selector) => (type, listener) => {
+  const element = (selector ? document.querySelector(selector) : document);
+
+  return type ? element.addEventListener(type, listener) : element;
+};
+
+$()('DOMContentLoaded', () => {
+  createWindow('Blog', 100, 80, 630, 600, '#content');
 });
+
+$('.expose-button')('click', () => {
+  window.x.mode = (window.x.mode === 'expose') ? 'default' : 'expose'
+});
+
+window.x = x;
