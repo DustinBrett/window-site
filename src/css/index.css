@@ -45,7 +45,7 @@ body {
 /* Icons */
 .icon {
   padding: 4px 8px 4px 8px;
-  border: 2px solid transparent;
+  border: 1px solid transparent;
   text-align: center;
   margin-bottom: 32px;
 }
@@ -70,90 +70,30 @@ body {
 
 .icon:hover {
   background: rgba(255, 255, 255, 0.1);
-  border: 2px solid rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .icon:first-child {
   margin-top: 5px;
 }
 
-/* ==========================================================================
-    Taskbar
-========================================================================== */
+/*
+==================================================
+	Taskbar
+==================================================
+*/
 .taskbar {
   position: fixed;
-  bottom: 0;
-  height: 43px;
-  width: 100%;
-  background: #004172;
+	bottom: 0;
+  height: 30px;
+	width: 100%;
+	background: #080808;
+	opacity: 0.875;
 }
 
+/* > Left */
 .taskbar .icons-left {
-  height: 43px;
   display: inline-block;
-}
-
-.taskbar .icons-left #start-menu, .taskbar .icons-left #tabs-windows {
-  height: 43px;
-  width: 48px;
-  position: relative;
-}
-
-.taskbar .icons-left #start-menu i, .taskbar .icons-left #tabs-windows i {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  font-size: 21px;
-  color: white;
-}
-
-.taskbar .icons-left #search {
-  height: 43px;
-  width: 49px;
-  background-image: url("https://image.noelshack.com/fichiers/2018/18/6/1525514790-698627-icon-111-search-512.png");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: 26px 26px;
-}
-
-.taskbar .icons-left #folder {
-  height: 43px;
-  width: 49px;
-  background-image: url("http://www.iconarchive.com/download/i98291/dakirby309/simply-styled/File-Explorer.ico");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: 21px 21px;
-  background-size: 24px 21px;
-}
-
-.taskbar .icons-left #chrome {
-  height: 43px;
-  width: 49px;
-  background-image: url("https://cdn0.iconfinder.com/data/icons/jfk/512/chrome-512.png");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: 26px 26px;
-}
-
-.taskbar .icons-left #tabs-windows {
-  height: 43px;
-  width: 49px;
-  background-image: url("https://image.noelshack.com/fichiers/2018/18/5/1525467821-tabs.png");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: 15px 15px;
-  background-size: 23px 15px;
-}
-
-.taskbar .icons-left #tabs-windows:hover {
-  height: 43px;
-  width: 49px;
-  background-image: url("https://image.noelshack.com/fichiers/2018/18/5/1525467821-tabs.png");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: 15px 15px;
-  background-size: 28px 15px;
 }
 
 .taskbar .icons-left a {
@@ -165,107 +105,47 @@ body {
   background-color: rgba(255, 255, 255, 0.1) !important;
 }
 
-.taskbar .icons-left a:not(:first-child) {
-  margin-left: -4px;
+/* >> Start */
+.taskbar .icons-left #start svg {
+  height: 19px;
+	width: 19px;
+	margin: 5px 10px 0 10px;
+	fill: #FFFFFF; /* TODO: Fix opacity */
 }
 
-.taskbar .icons-left a.border:focus {
-  border-bottom: 2px solid rgba(245, 245, 245, 0.651);
+.taskbar .icons-left #start:hover svg {
+	fill: #429CE3;
 }
 
-.taskbar .icons-left .px {
-  width: 1px;
+/* >> Task View */
+.taskbar .icons-left #task-view svg {
+  height: 20px;
+	width: 20px;
+	margin: 5px 10px 0 10px;
+	fill: #FFFFFF; /* TODO: Fix opacity */
 }
 
-.taskbar .icons-left .px a {
-  pointer-events: none;
-}
-
+/* > Right */
 .taskbar .icons-right {
-  height: 43px;
   float: right;
 }
 
-.taskbar .icons-right #wifi {
-  height: 43px;
-  width: 49px;
-  background-image: url("https://image.noelshack.com/fichiers/2018/18/4/1525383811-wifinotificationicon.png");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: 16px 16px;
-}
-
-.taskbar .icons-right #sound {
-  height: 43px;
-  width: 49px;
-  background-image: url("https://image.noelshack.com/fichiers/2018/18/4/1525383779-audiotoasticon.png");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: 22px 22px;
-}
-
-.taskbar .icons-right #return {
-  width: 4px;
-  border-left: 1px solid grey;
-}
-
-.taskbar .icons-right #notifications, .taskbar .icons-right #up {
-  height: 43px;
-  width: 42px;
-  position: relative;
-}
-
-.taskbar .icons-right #notifications i, .taskbar .icons-right #up i {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  font-size: 17px;
-  color: white;
-}
-
-.taskbar .icons-right .clear {
-  height: 43px;
-  width: 7px;
-  display: table-cell;
-}
-
-.taskbar .icons-right .disabled {
-  pointer-events: none;
-  cursor: default;
-}
-
-.taskbar .icons-right .datetime {
-  display: table-cell;
+/* >> Clock */
+.taskbar .icons-right .clock {
+	display: table-cell;
+	height: 30px;
   width: 70px !important;
   cursor: pointer;
-  padding-top: 3px;
 }
 
-.taskbar .icons-right .datetime span {
+.taskbar .icons-right .clock:hover {
+  background-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+.taskbar .icons-right .clock #time {
   display: block;
   text-align: center;
-  margin-top: 5px;
-  font-size: 11.3px;
-  color: white;
-}
-
-.taskbar .icons-right .datetime:hover {
-  background-color: rgba(255, 255, 255, 0.1) !important;
-}
-
-.taskbar .icons-right a {
-  display: table-cell;
-}
-
-.taskbar .icons-right a:hover {
-  background-color: rgba(255, 255, 255, 0.1) !important;
-}
-
-.taskbar .icons-right a:not(:first-child) {
-  margin-left: -4px;
-}
-
-.taskbar .icons-right .small-icons {
-  width: 24px !important;
+	margin: 8px 4px 0 4px;
+  font-size: 11.5px;
+  color: #FFFFFF;
 }

@@ -26,26 +26,21 @@ $('.expose-button')('click', () => {
   window.x.mode = (window.x.mode === 'expose') ? 'default' : 'expose'
 });
 
-$('.expose-button2')('click', () => {
+$('#task-view')('click', () => {
   window.x.mode = (window.x.mode === 'expose') ? 'default' : 'expose'
 });
 
 window.x = x;
 
-document.getElementById('date').innerHTML = getFormattedDate(new Date());
-
 setTime = () => {
-  document.getElementById('time').innerHTML = new Date().toTimeString().substr(0, 8);
+  const now = new Date();
+  const hour24 = now.getHours();
+  const hour12 = hour24 % 12 ? hour24 % 12 : 12;
+  const minute = now.getMinutes();
+  const period = hour24 > 12 ? 'PM' : 'AM';
+
+  document.getElementById('time').innerHTML = `${hour12}:${minute} ${period}`;
 }
 
 setTime();
-
 window.setInterval(setTime, 1000);
-
-function getFormattedDate(date) {
-  let year = date.getFullYear();
-  let month = (1 + date.getMonth()).toString().padStart(2, '0');
-  let day = date.getDate().toString().padStart(2, '0');
-
-  return month + '/' + day + '/' + year;
-}
