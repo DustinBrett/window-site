@@ -1,0 +1,16 @@
+{
+  "author": "Dustin Brett",
+  "name": "dustinbrett.com",
+  "version": "1.0.0",
+  "bugs": {
+    "url": "https://github.com/DustinBrett/window-site/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DustinBrett/window-site.git"
+  },
+  "license": "UNLICENSED",
+  "devDependencies": {
+    "node-sass": "^4.11.0"
+  }
+}

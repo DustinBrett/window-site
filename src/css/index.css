@@ -1,151 +1,112 @@
-html, body{ 
+/* TODO: Use a Combination of Percent and Em */
+html, body {
   height: 100%;
   margin: 0;
-  padding: 0; 
-}
+  padding: 0; }
 
 body {
-	background: url(../img/bg.jpg) no-repeat center center fixed;
-	-webkit-background-size: cover;
-	-moz-background-size: cover;
-	-o-background-size: cover;
-	background-size: cover;
-
-	font-family: Consolas, 'Courier New', monospace;
-	font-size: 90%;
-
-	height: 100%;
-	overflow: hidden;
-
-	-webkit-user-select: none;
-	-moz-user-select: none;
-	-o-user-select: none;
-	user-select: none;
-}
+  background: url(../img/bg.jpg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  font-family: Consolas, 'Courier New', monospace;
+  font-size: 90%;
+  height: 100%;
+  overflow: hidden;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -o-user-select: none;
+  user-select: none; }
 
 .wm-space {
-	user-select: none;
-}
+  user-select: none; }
 
 .desktop-icons {
-	position: absolute;
-	top: 0;
-	left: 0;
-}
+  position: absolute;
+  top: 0;
+  left: 0; }
 
 .wm-window header {
-	height: 28px !important;
-	min-height: 28px !important;
-}
+  height: 28px !important;
+  min-height: 28px !important; }
 
 .wm-window h1 {
-	font-size: 14px !important;
-}
+  font-size: 14px !important; }
 
-/* Icons */
+/* Icon */
 .icon {
   padding: 4px 8px 4px 8px;
   border: 1px solid transparent;
   text-align: center;
-  margin-bottom: 32px;
-}
+  margin-bottom: 32px; }
+  .icon :hover {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2); }
+  .icon :first-child {
+    margin-top: 5px; }
+  .icon a {
+    display: block;
+    text-decoration: none;
+    cursor: default; }
+  .icon img {
+    height: 48px;
+    width: 48px; }
+  .icon span {
+    display: block;
+    color: white;
+    font-size: 11px;
+    text-align: center; }
 
-.icon a {
-  display: block;
-  text-decoration: none;
-  cursor: default;
-}
+/* Taskbar */
+/* ############################################################ */
+.taskbar .taskbar-buttons .taskbar-button, .taskbar .taskbar-tray .clock {
+  cursor: pointer;
+  display: table-cell;
+  height: 30px; }
+  .taskbar .taskbar-buttons .taskbar-button :hover, .taskbar .taskbar-tray .clock :hover {
+    background-color: rgba(255, 255, 255, 0.1) !important;
+    /* TODO: important? */ }
 
-.icon img {
-  height: 48px;
-  width: 48px;
-}
+.taskbar .taskbar-buttons #start .taskbar-icon, .taskbar .taskbar-buttons #task-view .taskbar-icon {
+  padding: 5px 10px 5px 10px;
+  fill: #FFFFFF;
+  /* TODO: Fix opacity */ }
 
-.icon span {
-  display: block;
-  color: white;
-  font-size: 11px;
-  text-align: center;
-}
-
-.icon:hover {
-  background: rgba(255, 255, 255, 0.1);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-}
-
-.icon:first-child {
-  margin-top: 5px;
-}
-
-/*
-==================================================
-	Taskbar
-==================================================
-*/
 .taskbar {
   position: fixed;
-	bottom: 0;
+  bottom: 0;
+  width: 100%;
   height: 30px;
-	width: 100%;
-	background: #080808;
-	opacity: 0.875;
-}
+  background-color: #080808;
+  opacity: 0.875;
+  /* Buttons */
+  /* Tray */ }
+  .taskbar .taskbar-buttons {
+    display: inline-block;
+    /* Start */
+    /* Task View */ }
+    .taskbar .taskbar-buttons #start :hover .taskbar-icon {
+      /* TODO: Diff in SCSS? */
+      fill: #429CE3; }
+    .taskbar .taskbar-buttons #start .taskbar-icon {
+      height: 19px;
+      width: 19px; }
+    .taskbar .taskbar-buttons #task-view .taskbar-icon {
+      height: 20px;
+      width: 20px; }
+  .taskbar .taskbar-tray {
+    float: right;
+    /* Clock */ }
+    .taskbar .taskbar-tray .clock {
+      width: 70px !important;
+      /* TODO: important? */ }
+      .taskbar .taskbar-tray .clock #time {
+        display: block;
+        /* TODO: Needed? */
+        text-align: center;
+        margin: 8px 4px 0 4px;
+        font-size: 11.5px;
+        color: #FFFFFF; }
 
-/* > Left */
-.taskbar .icons-left {
-  display: inline-block;
-}
-
-.taskbar .icons-left a {
-  display: table-cell;
-  border-bottom: 2px solid transparent;
-}
-
-.taskbar .icons-left a:hover {
-  background-color: rgba(255, 255, 255, 0.1) !important;
-}
-
-/* >> Start */
-.taskbar .icons-left #start svg {
-  height: 19px;
-	width: 19px;
-	margin: 5px 10px 0 10px;
-	fill: #FFFFFF; /* TODO: Fix opacity */
-}
-
-.taskbar .icons-left #start:hover svg {
-	fill: #429CE3;
-}
-
-/* >> Task View */
-.taskbar .icons-left #task-view svg {
-  height: 20px;
-	width: 20px;
-	margin: 5px 10px 0 10px;
-	fill: #FFFFFF; /* TODO: Fix opacity */
-}
-
-/* > Right */
-.taskbar .icons-right {
-  float: right;
-}
-
-/* >> Clock */
-.taskbar .icons-right .clock {
-	display: table-cell;
-	height: 30px;
-  width: 70px !important;
-  cursor: pointer;
-}
-
-.taskbar .icons-right .clock:hover {
-  background-color: rgba(255, 255, 255, 0.1) !important;
-}
-
-.taskbar .icons-right .clock #time {
-  display: block;
-  text-align: center;
-	margin: 8px 4px 0 4px;
-  font-size: 11.5px;
-  color: #FFFFFF;
-}
+/* ############################################################ */
