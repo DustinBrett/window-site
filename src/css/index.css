@@ -1,44 +1,44 @@
 /* TODO: Use a Combination of Percent and Em */
 body {
-  background: url("../img/bg.jpg") no-repeat center center fixed;
-  font-family: Consolas, "Courier New", monospace;
-  font-size: 90%; }
+  background: url("../img/bg.jpg") no-repeat center center fixed; }
 
-.desktop-buttons {
+.desktop {
   position: absolute;
   top: 0;
   left: 0; }
-  .desktop-buttons .desktop-button {
+  .desktop .button {
     border: 1px solid transparent;
+    /* TODO: Do I need this? */
     cursor: default;
     display: block;
-    margin-bottom: 25px;
     padding: 4px 8px 4px 8px;
     text-align: center;
-    text-decoration: none; }
-    .desktop-buttons .desktop-button:first-child {
+    text-decoration: none;
+    /* TODO: Do I need this? */
+    margin-bottom: 25px; }
+    .desktop .button:first-child {
       margin-top: 5px; }
-    .desktop-buttons .desktop-button:hover {
+    .desktop .button:hover {
       background-color: rgba(255, 255, 255, 0.1);
       border: 1px solid rgba(255, 255, 255, 0.2); }
-    .desktop-buttons .desktop-button .desktop-button-icon {
+    .desktop .button .icon {
       height: 48px;
       width: 48px; }
-    .desktop-buttons .desktop-button .desktop-button-text {
+    .desktop .button .text {
       display: block;
+      text-align: center;
       color: white;
-      font-size: 11px;
-      text-align: center; }
+      font-size: 11px; }
 
 /* TODO: Use a Combination of Percent and Em */
-.taskbar .taskbar-buttons .taskbar-button, .taskbar .taskbar-tray .clock {
+.taskbar .buttons .button, .taskbar .tray .clock {
   cursor: pointer;
   display: table-cell;
   height: 30px; }
-  .taskbar .taskbar-buttons .taskbar-button:hover, .taskbar .taskbar-tray .clock:hover {
+  .taskbar .buttons .button:hover, .taskbar .tray .clock:hover {
     background-color: rgba(255, 255, 255, 0.1); }
 
-.taskbar .taskbar-buttons #start .taskbar-button-icon, .taskbar .taskbar-buttons #task-view .taskbar-button-icon {
+.taskbar .buttons #start .icon, .taskbar .buttons #task-view .icon {
   padding: 5px 10px 5px 10px;
   fill: #FFFFFF;
   /* TODO: Fix opacity */ }
@@ -52,24 +52,24 @@ body {
   opacity: 0.875;
   /* Buttons */
   /* Tray */ }
-  .taskbar .taskbar-buttons {
+  .taskbar .buttons {
     display: inline-block;
     /* Start */
     /* Task View */ }
-    .taskbar .taskbar-buttons #start:hover .taskbar-button-icon {
+    .taskbar .buttons #start:hover .icon {
       fill: #429CE3; }
-    .taskbar .taskbar-buttons #start .taskbar-button-icon {
+    .taskbar .buttons #start .icon {
       height: 19px;
       width: 19px; }
-    .taskbar .taskbar-buttons #task-view .taskbar-button-icon {
+    .taskbar .buttons #task-view .icon {
       height: 20px;
       width: 20px; }
-  .taskbar .taskbar-tray {
+  .taskbar .tray {
     float: right;
     /* Clock */ }
-    .taskbar .taskbar-tray .clock {
+    .taskbar .tray .clock {
       width: 70px; }
-      .taskbar .taskbar-tray .clock #time {
+      .taskbar .tray .clock #time {
         display: block;
         text-align: center;
         margin: 8px 4px 0 4px;
@@ -100,4 +100,6 @@ body {
   -webkit-user-select: none;
   -moz-user-select: none;
   -o-user-select: none;
-  user-select: none; }
+  user-select: none;
+  font-family: Consolas, "Courier New", monospace;
+  font-size: 90%; }

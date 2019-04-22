@@ -11,10 +11,13 @@
 }
 
 %taskbar-button-icon-attributes {
-  .taskbar-button-icon {
-    padding: 5px 10px 5px 10px;
-    fill: $taskbar-element-color; /* TODO: Fix opacity */
-  }
+  padding: 5px 10px 5px 10px;
+  fill: $taskbar-element-color; /* TODO: Fix opacity */
+}
+
+@mixin taskbar-button-icon-dimensions($height: 20px, $width: 20px) {
+  height: $height;
+  width: $width;
 }
 
 .taskbar {
@@ -26,40 +29,36 @@
   opacity: $taskbar-opacity;
 
   /* Buttons */
-  .taskbar-buttons {
+  .buttons {
     display: inline-block;
 
-    .taskbar-button {
+    .button {
       @extend %taskbar-element-attributes;
     }
 
     /* Start */
     #start {
-      @extend %taskbar-button-icon-attributes;
-
-      &:hover .taskbar-button-icon {
+      &:hover .icon {
         fill: #429CE3;
       }
 
-      .taskbar-button-icon {
-        height: 19px;
-        width: 19px;
+      .icon {
+        @extend %taskbar-button-icon-attributes;
+        @include taskbar-button-icon-dimensions(19px, 19px);
       }
     }
 
     /* Task View */
     #task-view {
-      @extend %taskbar-button-icon-attributes;
-
-      .taskbar-button-icon {
-        height: 20px;
-        width: 20px;
+      .icon {
+        @extend %taskbar-button-icon-attributes;
+        @include taskbar-button-icon-dimensions();
       }
     }
   }
 
   /* Tray */
-  .taskbar-tray {
+  .tray {
     float: right;
 
     /* Clock */

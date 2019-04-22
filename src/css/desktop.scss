@@ -1,25 +1,22 @@
 @import 'variables';
 
 body {
-  background: url($desktop-wallpaper) no-repeat center center fixed;
-
-  font-family: $desktop-font;
-  font-size: $desktop-font-size;
+  background: url($desktop-background) no-repeat center center fixed;
 }
 
-.desktop-buttons {
+.desktop {
   position: absolute;
   top: 0;
   left: 0;
 
-  .desktop-button {
-    border: 1px solid transparent;
+  .button {
+    border: 1px solid transparent; /* TODO: Do I need this? */
     cursor: default;
     display: block;
-    margin-bottom: 25px;
     padding: 4px 8px 4px 8px;
     text-align: center;
-    text-decoration: none;
+    text-decoration: none; /* TODO: Do I need this? */
+    margin-bottom: $desktop-button-spacing;
 
     &:first-child {
       margin-top: 5px;
@@ -30,16 +27,16 @@ body {
       border: 1px solid rgba(255, 255, 255, 0.2);
     }
 
-    .desktop-button-icon {
+    .icon {
       height: $desktop-button-icon-size;
       width: $desktop-button-icon-size;
     }
 
-    .desktop-button-text {
+    .text {
       display: block;
+      text-align: center;
       color: $desktop-button-text-color;
       font-size: $desktop-button-text-font-size;
-      text-align: center;
     }
   }
 }
