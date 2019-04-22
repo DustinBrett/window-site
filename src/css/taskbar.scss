@@ -1,0 +1,80 @@
+@import 'variables';
+
+%taskbar-element-attributes {
+  cursor: pointer;
+  display: table-cell;
+  height: $taskbar-height;
+
+  &:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+}
+
+%taskbar-button-icon-attributes {
+  .taskbar-button-icon {
+    padding: 5px 10px 5px 10px;
+    fill: $taskbar-element-color; /* TODO: Fix opacity */
+  }
+}
+
+.taskbar {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: $taskbar-height;
+  background-color: $taskbar-background-color;
+  opacity: $taskbar-opacity;
+
+  /* Buttons */
+  .taskbar-buttons {
+    display: inline-block;
+
+    .taskbar-button {
+      @extend %taskbar-element-attributes;
+    }
+
+    /* Start */
+    #start {
+      @extend %taskbar-button-icon-attributes;
+
+      &:hover .taskbar-button-icon {
+        fill: #429CE3;
+      }
+
+      .taskbar-button-icon {
+        height: 19px;
+        width: 19px;
+      }
+    }
+
+    /* Task View */
+    #task-view {
+      @extend %taskbar-button-icon-attributes;
+
+      .taskbar-button-icon {
+        height: 20px;
+        width: 20px;
+      }
+    }
+  }
+
+  /* Tray */
+  .taskbar-tray {
+    float: right;
+
+    /* Clock */
+    .clock {
+      @extend %taskbar-element-attributes;
+
+      width: 70px;
+
+      #time {
+        display: block;
+        text-align: center;
+        margin: 8px 4px 0 4px;
+        font-size: $taskbar-font-size;
+        color: $taskbar-element-color;
+      }
+    }
+  }
+}

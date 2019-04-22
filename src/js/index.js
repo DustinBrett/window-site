@@ -18,11 +18,11 @@ const $ = (selector) => (type, listener) => {
   return type ? element.addEventListener(type, listener) : element;
 };
 
-$('.blog-button')('click', () => {
+$('#blog')('click', () => {
   createWindow('Blog', 150, 80, 630, 600, '#content');
 });
 
-$('.expose-button')('click', () => {
+$('#expose')('click', () => {
   window.x.mode = (window.x.mode === 'expose') ? 'default' : 'expose'
 });
 

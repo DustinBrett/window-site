@@ -1,0 +1,45 @@
+@import 'variables';
+
+body {
+  background: url($desktop-wallpaper) no-repeat center center fixed;
+
+  font-family: $desktop-font;
+  font-size: $desktop-font-size;
+}
+
+.desktop-buttons {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  .desktop-button {
+    border: 1px solid transparent;
+    cursor: default;
+    display: block;
+    margin-bottom: 25px;
+    padding: 4px 8px 4px 8px;
+    text-align: center;
+    text-decoration: none;
+
+    &:first-child {
+      margin-top: 5px;
+    }
+
+    &:hover {
+      background-color: rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .desktop-button-icon {
+      height: $desktop-button-icon-size;
+      width: $desktop-button-icon-size;
+    }
+
+    .desktop-button-text {
+      display: block;
+      color: $desktop-button-text-color;
+      font-size: $desktop-button-text-font-size;
+      text-align: center;
+    }
+  }
+}

@@ -1,168 +1,23 @@
-/* TODO: Use a Combination of Percent and Em */
-html, body{
-    height: 100%;
-    margin: 0;
-    padding: 0;
-  }
+@import 'desktop';
+@import 'taskbar';
+@import 'windows';
 
-  body {
-      background: url(../img/bg.jpg) no-repeat center center fixed;
-      -webkit-background-size: cover;
-      -moz-background-size: cover;
-      -o-background-size: cover;
-      background-size: cover;
-
-      font-family: Consolas, 'Courier New', monospace;
-      font-size: 90%;
-
-      height: 100%;
-      overflow: hidden;
-
-      -webkit-user-select: none;
-      -moz-user-select: none;
-      -o-user-select: none;
-      user-select: none;
-  }
-
-  .wm-space {
-      user-select: none;
-  }
-
-  .desktop-icons {
-      position: absolute;
-      top: 0;
-      left: 0;
-  }
-
-  .wm-window header {
-      height: 28px !important;
-      min-height: 28px !important;
-  }
-
-  .wm-window h1 {
-      font-size: 14px !important;
-  }
-
-/* Icon */
-.icon {
-  padding: 4px 8px 4px 8px;
-  border: 1px solid transparent;
-  text-align: center;
-  margin-bottom: 32px;
-
-  :hover {
-    background: rgba(255, 255, 255, 0.1);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-  }
-
-  :first-child {
-    margin-top: 5px;
-  }
-
-  a {
-    display: block;
-    text-decoration: none;
-    cursor: default;
-  }
-
-  img {
-    height: 48px;
-    width: 48px;
-  }
-
-  span {
-    display: block;
-    color: white;
-    font-size: 11px;
-    text-align: center;
-  }
+body, html {
+  height: 100%;
 }
 
-/* Taskbar */
-/* TODO: 1 pixel about start */
-/* TODO: padding for clock */
-/* ############################################################ */
-$taskbar-background-color: #080808;
-$taskbar-element-color: #FFFFFF;
-$taskbar-opacity: 0.875;
-$taskbar-height: 30px;
+body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
 
-%taskbar-element-attributes {
-  cursor: pointer;
-  display: table-cell;
-  height: $taskbar-height;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 
-  :hover {
-    background-color: rgba(255, 255, 255, 0.1) !important; /* TODO: important? */
-  }
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -o-user-select: none;
+  user-select: none;
 }
-
-%taskbar-icon-attributes {
-  .taskbar-icon {
-    padding: 5px 10px 5px 10px;
-    fill: $taskbar-element-color; /* TODO: Fix opacity */
-  }
-}
-
-.taskbar {
-  position: fixed;
-  bottom: 0;
-  width: 100%;
-  height: $taskbar-height;
-  background-color: $taskbar-background-color;
-  opacity: $taskbar-opacity;
-
-  /* Buttons */
-  .taskbar-buttons {
-    display: inline-block;
-
-    .taskbar-button {
-      @extend %taskbar-element-attributes;
-    }
-
-    /* Start */
-    #start {
-      @extend %taskbar-icon-attributes;
-
-      :hover .taskbar-icon { /* TODO: Diff in SCSS? */
-        fill: #429CE3;
-      }
-
-      .taskbar-icon {
-        height: 19px;
-        width: 19px;
-      }
-    }
-
-    /* Task View */
-    #task-view {
-      @extend %taskbar-icon-attributes;
-
-      .taskbar-icon {
-        height: 20px;
-        width: 20px;
-      }
-    }
-  }
-
-  /* Tray */
-  .taskbar-tray {
-    float: right;
-
-    /* Clock */
-    .clock {
-      @extend %taskbar-element-attributes;
-
-      width: 70px !important; /* TODO: important? */
-
-      #time {
-        display: block; /* TODO: Needed? */
-        text-align: center;
-        margin: 8px 4px 0 4px;
-        font-size: 11.5px;
-        color: $taskbar-element-color;
-      }
-    }
-  }
-}
-/* ############################################################ */
