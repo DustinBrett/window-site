@@ -68,7 +68,7 @@ body {
     float: right;
     /* Clock */ }
     .taskbar .tray .clock {
-      width: 70px; }
+      width: 85px; }
       .taskbar .tray .clock #time {
         display: block;
         text-align: center;

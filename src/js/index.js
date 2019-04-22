@@ -18,29 +18,19 @@ const $ = (selector) => (type, listener) => {
   return type ? element.addEventListener(type, listener) : element;
 };
 
-$('#blog')('click', () => {
-  createWindow('Blog', 150, 80, 630, 600, '#content');
-});
-
-$('#expose')('click', () => {
+const exposeToggle = () => {
   window.x.mode = (window.x.mode === 'expose') ? 'default' : 'expose'
-});
+};
 
-$('#task-view')('click', () => {
-  window.x.mode = (window.x.mode === 'expose') ? 'default' : 'expose'
-});
+const setTime = () => {
+  document.getElementById('time').innerHTML = new Date().toLocaleTimeString();
+};
 
-window.x = x;
-
-setTime = () => {
-  const now = new Date();
-  const hour24 = now.getHours();
-  const hour12 = hour24 % 12 ? hour24 % 12 : 12;
-  const minute = now.getMinutes();
-  const period = hour24 > 12 ? 'PM' : 'AM';
-
-  document.getElementById('time').innerHTML = `${hour12}:${minute} ${period}`;
-}
+$('#blog')('click', () => createWindow('Blog', 150, 80, 630, 600, '#content'));
+$('#expose')('click', exposeToggle);
+$('#task-view')('click', exposeToggle);
 
 setTime();
+
 window.setInterval(setTime, 1000);
+window.x = x;

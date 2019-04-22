@@ -39,7 +39,7 @@
     /* Start */
     #start {
       &:hover .icon {
-        fill: #429CE3;
+        fill: $taskbar-buttons-start-hover-color;
       }
 
       .icon {
@@ -65,7 +65,7 @@
     .clock {
       @extend %taskbar-element-attributes;
 
-      width: 70px;
+      width: $taskbar-tray-clock-width;
 
       #time {
         display: block;
