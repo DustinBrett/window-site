@@ -5,6 +5,9 @@
   "bugs": {
     "url": "https://github.com/DustinBrett/window-site/issues"
   },
+  "scripts": {
+    "sass": "node-sass src/css/main.scss src/css/main.css"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/DustinBrett/window-site.git"
@@ -12,5 +15,6 @@
   "license": "UNLICENSED",
   "devDependencies": {
     "node-sass": "^4.11.0"
-  }
+  },
+  "dependencies": {}
 }
