@@ -1,20 +1,73 @@
-/* TODO: Use a Combination of Percent and Em */
+/* TODO
+  - Better animated space scene
+*/
 body {
-  background: url("../img/bg.jpg") no-repeat center center fixed; }
+  background: #000000; }
 
+#space, .stars {
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0; }
+
+@keyframes zoom {
+  0% {
+    opacity: 0;
+    transform: scale(0.5);
+    animation-timing-function: ease-in; }
+  85% {
+    opacity: 1;
+    transform: scale(2.8);
+    animation-timing-function: linear; }
+  100% {
+    opacity: 0;
+    transform: scale(3.5); } }
+
+.stars {
+  background-image: radial-gradient(2px 2px at 20px 30px, #eeeeee, rgba(0, 0, 0, 0)), radial-gradient(2px 2px at 40px 70px, #ffffff, rgba(0, 0, 0, 0)), radial-gradient(2px 2px at 50px 160px, #dddddd, rgba(0, 0, 0, 0)), radial-gradient(2px 2px at 90px 40px, #ffffff, rgba(0, 0, 0, 0)), radial-gradient(2px 2px at 130px 80px, #ffffff, rgba(0, 0, 0, 0)), radial-gradient(2px 2px at 160px 120px, #dddddd, rgba(0, 0, 0, 0));
+  background-repeat: repeat;
+  background-size: 200px 200px;
+  animation: zoom 10s infinite;
+  opacity: 0; }
+  .stars:nth-child(1) {
+    background-position: 50% 50%;
+    animation-delay: 0s; }
+  .stars:nth-child(2) {
+    background-position: 20% 60%;
+    animation-delay: 1s; }
+  .stars:nth-child(3) {
+    background-position: -20% -30%;
+    animation-delay: 2s; }
+  .stars:nth-child(4) {
+    background-position: 40% -80%;
+    animation-delay: 3s; }
+  .stars:nth-child(5) {
+    background-position: -20% 30%;
+    animation-delay: 4s; }
+
+/* TODO
+  - Get icons looking like W10
+  - Arrange icons into groups like I do on my PC
+  - Icons:
+    - Blog
+    - Pictures (Travel, Family, etc)
+    - Videos (*)
+    - Documents (Resume)
+  - Right click menu
+*/
 .desktop {
   position: absolute;
   top: 0;
   left: 0; }
   .desktop .button {
     border: 1px solid transparent;
-    /* TODO: Do I need this? */
     cursor: default;
     display: block;
     padding: 4px 8px 4px 8px;
     text-align: center;
     text-decoration: none;
-    /* TODO: Do I need this? */
     margin-bottom: 25px; }
     .desktop .button:first-child {
       margin-top: 5px; }
@@ -30,7 +83,10 @@ body {
       color: white;
       font-size: 11px; }
 
-/* TODO: Use a Combination of Percent and Em */
+/* TODO
+- Better clock font
+- Clock load with time (no delay)
+*/
 .taskbar .buttons .button, .taskbar .tray .clock {
   cursor: pointer;
   display: table-cell;
@@ -40,8 +96,7 @@ body {
 
 .taskbar .buttons #start .icon, .taskbar .buttons #task-view .icon {
   padding: 5px 10px 5px 10px;
-  fill: #FFFFFF;
-  /* TODO: Fix opacity */ }
+  fill: #FFFFFF; }
 
 .taskbar {
   position: fixed;
@@ -50,6 +105,7 @@ body {
   height: 30px;
   background-color: #080808;
   opacity: 0.875;
+  z-index: 10001;
   /* Buttons */
   /* Tray */ }
   .taskbar .buttons {
@@ -68,7 +124,7 @@ body {
     float: right;
     /* Clock */ }
     .taskbar .tray .clock {
-      width: 85px; }
+      width: 90px; }
       .taskbar .tray .clock #time {
         display: block;
         text-align: center;
@@ -86,6 +142,12 @@ body {
 .wm-space {
   user-select: none; }
 
+/* TODO
+  - Startup apps
+  - Windows like W10
+  - Terminal (https://codepen.io/Guilome/pen/myZaxK)
+  - Copy more (https://codepen.io/Guilome/pen/bKbMQW)
+*/
 body, html {
   height: 100%; }
 

@@ -1,5 +1,9 @@
 @import 'variables';
 
+/* TODO
+  - Better clock font
+*/
+
 %taskbar-element-attributes {
   cursor: pointer;
   display: table-cell;
@@ -12,7 +16,7 @@
 
 %taskbar-button-icon-attributes {
   padding: 5px 10px 5px 10px;
-  fill: $taskbar-element-color; /* TODO: Fix opacity */
+  fill: $taskbar-element-color;
 }
 
 @mixin taskbar-button-icon-dimensions($height: 20px, $width: 20px) {
@@ -27,6 +31,7 @@
   height: $taskbar-height;
   background-color: $taskbar-background-color;
   opacity: $taskbar-opacity;
+  z-index: 10001;
 
   /* Buttons */
   .buttons {
