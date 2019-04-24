@@ -1,8 +1,11 @@
 @import 'variables';
-@import 'background';
+//@import 'background';
+
+body {
+  background-color: blue;
+}
 
 /* TODO
-  - Get icons looking like W10
   - Arrange icons into groups like I do on my PC
   - Icons:
     - Blog
@@ -21,18 +24,20 @@
     border: 1px solid transparent;
     cursor: default;
     display: block;
-    padding: 4px 8px 4px 8px;
+    outline: 1px solid transparent;
+    padding: 3px 12px 3px 12px;
     text-align: center;
     text-decoration: none;
-    margin-bottom: $desktop-button-spacing;
+    margin-bottom: 28px;
 
     &:first-child {
       margin-top: 5px;
     }
 
     &:hover {
-      background-color: rgba(255, 255, 255, 0.1);
-      border: 1px solid rgba(255, 255, 255, 0.2);
+      background-color: rgba(255, 255, 255, 0.2);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      outline: 1px solid rgba(255, 255, 255, 0.2);
     }
 
     .icon {
@@ -45,6 +50,7 @@
       text-align: center;
       color: $desktop-button-text-color;
       font-size: $desktop-button-text-font-size;
+      text-shadow: 1px 2px 3px #000000;
     }
   }
 }

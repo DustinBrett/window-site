@@ -1,5 +1,9 @@
 @import 'variables';
 
+/* TODO
+  - Blur behind taskbar opacity
+*/
+
 %taskbar-element-attributes {
   cursor: pointer;
   display: table-cell;
@@ -11,20 +15,19 @@
 }
 
 %taskbar-button-icon-attributes {
-  padding: 5px 10px 5px 10px;
-  fill: $taskbar-element-color;
-}
-
-@mixin taskbar-button-icon-dimensions($height: 20px, $width: 20px) {
-  height: $height;
-  width: $width;
+  .icon {
+    height: 20px;
+    width: 20px;
+    padding: 5px 8px 5px 8px;
+    fill: $taskbar-element-color;
+  }
 }
 
 .taskbar {
   position: fixed;
   bottom: 0;
   width: 100%;
-  height: $taskbar-height;
+  height: 30px;
   background-color: $taskbar-background-color;
   opacity: $taskbar-opacity;
   z-index: 10001;
@@ -39,21 +42,24 @@
 
     /* Start */
     #start {
+      @extend %taskbar-button-icon-attributes;
+
       &:hover .icon {
         fill: $taskbar-buttons-start-hover-color;
       }
 
       .icon {
-        @extend %taskbar-button-icon-attributes;
-        @include taskbar-button-icon-dimensions(19px, 19px);
+        height: 18px;
+        width: 18px;
       }
     }
 
     /* Task View */
     #task-view {
-      .icon {
-        @extend %taskbar-button-icon-attributes;
-        @include taskbar-button-icon-dimensions();
+      @extend %taskbar-button-icon-attributes;
+
+      &:hover .icon {
+        transform: scale(1.2,1);
       }
     }
   }
@@ -66,7 +72,7 @@
     .clock {
       @extend %taskbar-element-attributes;
 
-      width: $taskbar-tray-clock-width;
+      width: 90px;
 
       #time {
         display: block;
